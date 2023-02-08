@@ -1,0 +1,240 @@
+<table style="width:100%">
+    <tr valign="top">
+        <td style="width:30%">
+            <img src="https://www.snmpcenter.com/wp-content/uploads/2020/10/SDAIA.jpg"
+                style="width:256px;height:128px;">
+        </td>
+        <td valign="middle" style="width:40%">
+            <h1> Open Data Classification Tool </h1>
+        </td>
+        <td valign="middle" style="width:30%">
+            <h1> Classification: </h1>
+            <h2 id="answer"> </h2>
+
+        </td>
+
+    </tr>
+</table>
+
+
+<form id="Level1Questions">
+
+
+
+    <table style="width:100%">
+        <tr valign="top">
+            <td>
+                <h2> Level 1: Potential Impact across Six Factors </h2>
+
+                <h3> Political Impact </h3>
+
+                <p>Question 1: Could crucial diplomatic relations be compromised if this data is disclosed?</p>
+                <input type="radio" name="question1" value="yes">Yes
+                <input type="radio" name="question1" value="no">No
+                <br><br>
+
+                <p>Question 2: Could national security be under threat if this data is disclosed?</p>
+                <input type="radio" name="question2" value="yes">Yes
+                <input type="radio" name="question2" value="no">No
+                <br><br>
+
+                <p>Question 3: Can day to-day government function be disrupted if this data is disclosed?</p>
+                <input type="radio" name="question3" value="yes">Yes
+                <input type="radio" name="question3" value="no">No
+                <br><br>
+
+                <h3> Economic Impact </h3>
+
+                <p>Question 4: Are there potential losses to the KSA economy if this data is disclosed?</p>
+                <input type="radio" name="question4" value="yes">Yes
+                <input type="radio" name="question4" value="no">No
+                <br><br>
+
+                <p>Question 5: Are there potential economic losses to organizations, groups of people or individuals if
+                    this data is disclosed?</p>
+                <input type="radio" name="question5" value="yes">Yes
+                <input type="radio" name="question5" value="no">No
+                <br><br>
+
+                <h3> Social Impact </h3>
+
+                <p>Question 6: Is there potential threat to the health and safety of groups of people/individuals if
+                    this data is disclosed?</p>
+                <input type="radio" name="question6" value="yes">Yes
+                <input type="radio" name="question6" value="no">No
+                <br><br>
+
+                <p>Question 7: Is there potential threat to the privacy of groups of people/individuals if this data is
+                    disclosed?</p>
+                <input type="radio" name="question7" value="yes">Yes
+                <input type="radio" name="question7" value="no">No
+                <br><br>
+
+
+                <h3> Technological/Infrastructural Impact </h3>
+
+                <p>Question 8: Is there potential interruption to critical infrastructure in KSA, such as transport,
+                    energy, etc.?</p>
+                <input type="radio" name="question8" value="yes">Yes
+                <input type="radio" name="question8" value="no">No
+                <br><br>
+
+                <p>Question 9: Is there potential threat to the digital infrastructure in KSA, such as access to
+                    government data, cybersecurity threats, etc.?</p>
+                <input type="radio" name="question9" value="yes">Yes
+                <input type="radio" name="question9" value="no">No
+                <br><br>
+
+                <h3> Environmental Impact </h3>
+
+                <p>Question 10: Is there potential threat to the environmental and/or natural resources of KSA if this
+                    data is disclosed?</p>
+                <input type="radio" name="question10" value="yes">Yes
+                <input type="radio" name="question10" value="no">No
+                <br><br>
+
+            </td>
+            <td>
+
+                <h3> Legal Impact </h3>
+
+                <p>Question 11: Does releasing this data conflict with existing laws, rules and regulations?</p>
+                <input type="radio" name="question11" value="yes">Yes
+                <input type="radio" name="question11" value="no">No
+                <br><br>
+
+                <p>Question 12: Does publishing this data breach any ongoing contractual agreements between govt &
+                    private or amongst private entities?</p>
+                <input type="radio" name="question12" value="yes">Yes
+                <input type="radio" name="question12" value="no">No
+                <br><br>
+
+                <p>Question 13: Does this data have any restrictions on redistribution and/or copyright infringement
+                    issues?</p>
+                <input type="radio" name="question13" value="yes">Yes
+                <input type="radio" name="question13" value="no">No
+                <br><br>
+
+
+</form>
+
+
+<form id="Level2Questions">
+
+    <h2> Level 2: Data Relevance </h2>
+
+    <p>Question 1: Is the source of data credible?</p>
+    <input type="radio" name="question14" value="yes">Yes
+    <input type="radio" name="question14" value="no">No
+    <br><br>
+
+    <p>Question 2: Is the data stored in a usable format?</p>
+    <input type="radio" name="question15" value="yes">Yes
+    <input type="radio" name="question15" value="no">No
+    <br><br>
+
+    <p>Question 3: Is the data of the right quality, i.e., can it be considered accurate, complete and reliable?</p>
+    <input type="radio" name="question16" value="yes">Yes
+    <input type="radio" name="question16" value="no">No
+    <br><br>
+
+    <p>Question 4: Is the data relevant and utilitarian? Does its benefits outweigh its costs?</p>
+    <input type="radio" name="question17" value="yes">Yes
+    <input type="radio" name="question17" value="no">No
+    <br><br>
+
+</form>
+
+<form id="Level3Questions">
+
+    <h2> Level 3: Data Privacy </h2>
+
+    <p>Question 1: Is the dataset without any personal identifiable data (PII)? If there is any PII, can it be
+        anonymized?</p>
+    <input type="radio" name="question18" value="yes">Yes
+    <input type="radio" name="question18" value="no">No
+    <br><br>
+
+    <input type="button" value="Submit" onclick="calculateResults()">
+
+    </td>
+
+    </tr>
+    </table>
+
+
+</form>
+
+
+<script>
+    function calculateResults() {
+        var form1 = document.getElementById("Level1Questions");
+        var yesCount1 = 0;
+        var noCount1 = 0;
+
+        for (var i = 0; i < form1.elements.length; i++) {
+            if (form1.elements[i].type === "radio" && form1.elements[i].checked) {
+                if (form1.elements[i].value === "yes") {
+                    yesCount1++;
+                } else {
+                    noCount1++;
+                }
+            }
+        }
+
+        var form2 = document.getElementById("Level2Questions");
+        var yesCount2 = 0;
+        var noCount2 = 0;
+
+        for (var i = 0; i < form2.elements.length; i++) {
+            if (form2.elements[i].type === "radio" && form2.elements[i].checked) {
+                if (form2.elements[i].value === "yes") {
+                    yesCount2++;
+                } else {
+                    noCount2++;
+                }
+            }
+        }
+
+        var form3 = document.getElementById("Level3Questions");
+        var yesCount3 = 0;
+        var noCount3 = 0;
+
+        for (var i = 0; i < form3.elements.length; i++) {
+            if (form3.elements[i].type === "radio" && form3.elements[i].checked) {
+                if (form3.elements[i].value === "yes") {
+                    yesCount3++;
+                } else {
+                    noCount3++;
+                }
+            }
+        }
+
+
+
+        if (yesCount1 + noCount1 != 13 && yesCount2 + noCount2 != 4 && yesCount3 + noCount3 != 1) {
+            alert("Please select all options to generate result")
+        }
+
+        else if (yesCount1 == 0 && noCount2 == 0 && noCount3 == 0) {
+            // alert("Open Data - Ready to Publish")
+            const answer = document.getElementById("answer");
+            answer.innerHTML = "Open Data - Ready to Publish";
+            answer.style.color = "green";
+
+
+        }
+        else {
+            // alert("Classified Data")
+            const answer = document.getElementById("answer");
+            answer.innerHTML = "Classified Data";
+            answer.style.color = "red";
+
+        }
+
+
+
+        // alert("Yes: " + yesCount + "\nNo: " + noCount);
+
+    }
+</script>

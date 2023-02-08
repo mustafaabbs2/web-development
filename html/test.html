@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Yes or No Question</title>
+</head>
+
+<body>
+    <p>Do you like ice cream?</p>
+    <button id="yes-btn">Yes</button>
+    <button id="no-btn">No</button>
+    <p id="result"></p>
+
+    <script>
+        const yesBtn = document.getElementById("yes-btn");
+        const noBtn = document.getElementById("no-btn");
+        const result = document.getElementById("result");
+
+        yesBtn.addEventListener("click", function () {
+            result.innerHTML = "Great! Ice cream is the best.";
+        });
+
+        noBtn.addEventListener("click", function () {
+            result.innerHTML = "That's okay, there are plenty of other treats to enjoy.";
+        });
+    </script>
+</body>
+
+</html>

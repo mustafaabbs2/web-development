@@ -1,0 +1,71 @@
+<form id="surveyForm">
+    <p>Question 1: Do you like CFD?</p>
+    <input type="radio" name="question1" value="yes">Yes
+    <input type="radio" name="question1" value="no">No
+    <br><br>
+
+    <p>Question 2: Do you like Mustafa?</p>
+    <input type="radio" name="question20" value="yes">Yes
+    <input type="radio" name="question20" value="no">No
+    <br><br>
+
+    <p>Question 2: Do you like Mustafa?</p>
+    <input type="radio" name="question20" value="yes">Yes
+    <input type="radio" name="question20" value="no">No
+    <br><br>
+
+
+    <p>Question 1: Do you like CFD?</p>
+    <input type="radio" name="question1" value="yes">Yes
+    <input type="radio" name="question1" value="no">No
+    <br><br>
+
+    <p>Question 2: Do you like Mustafa?</p>
+    <input type="radio" name="question20" value="yes">Yes
+    <input type="radio" name="question20" value="no">No
+    <br><br>
+
+    <p>Question 1: Do you like CFD?</p>
+    <input type="radio" name="question1" value="yes">Yes
+    <input type="radio" name="question1" value="no">No
+    <br><br>
+
+    <p>Question 2: Do you like Mustafa?</p>
+    <input type="radio" name="question20" value="yes">Yes
+    <input type="radio" name="question20" value="no">No
+    <br><br>
+
+    <input type="button" value="Submit" onclick="calculateResults()">
+</form>
+
+<img />
+
+
+<script>
+    function calculateResults() {
+        var form = document.getElementById("surveyForm");
+        var yesCount = 0;
+        var noCount = 0;
+
+        for (var i = 0; i < form.elements.length; i++) {
+            if (form.elements[i].type === "radio" && form.elements[i].checked) {
+                if (form.elements[i].value === "yes") {
+                    yesCount++;
+                } else {
+                    noCount++;
+                }
+            }
+        }
+        if (noCount == 0) {
+            // alert("You have all yes's, congratulations bitch")
+            document.write("You have all yes's, congratulations bitch")
+        }
+        else {
+            alert("There is atleast one no")
+
+        }
+
+        // alert("Yes: " + yesCount + "\nNo: " + noCount);
+
+    }
+</script>
