@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Data classification tool</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #FFFFFF;
+            color: #323133;
+            font: 14px 'Open Sans', sans-serif;
+        }
+
+        .top {
+            padding-right: 20px;
+            background: #261F41;
+            text-align: right;
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            text-decoration: none;
+            line-height: 42px;
+        }
+
+        h1 {
+            padding: 50px 0;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .main {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+
+        .main .quizsection {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <table style="width:100%">
+        <tr valign="top">
+            <td style="width:5%"> </td>
+            <td style="width:25%">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/%D8%B4%D8%B9%D8%A7%D8%B1_%D8%A7%D9%84%D9%87%D9%8A%D8%A6%D8%A9_%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9_%D9%84%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA_%D9%88%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1_%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A_SDAIA.svg"
+                    style="width:200px;height:100px;">
+
+            </td>
+            <td valign="middle" style="width:30%">
+                <h1> <b> Yakluta Data Classification Tool</b> </h1>
+            </td>
+            <td valign="middle" align="right" style="width:25%">
+                <h2> Classification result: </h2>
+            </td>
+            <td valign="middle" align="left" style="width:15%">
+                <h2 id="answer"> </h2>
+
+            </td>
+
+        </tr>
+    </table>
+
+
+    <form id="Level1Questions">
+
+
+
+        <table style="width:100%">
+            <tr valign="top">
+                <td width="5%"></td>
+                <td width="40%">
+
+
+                    <h3> Political Impact </h3>
+
+                    <h4>Question 1: Could crucial diplomatic relations be compromised if this data is disclosed?</h4>
+                    <p>Information related to bilateral agreements and diplomatic Memorandums of Understanding between
+                        the Kingdom and other countries</p>
+                    <br>
+                    <input type="radio" name="question1" value="yes" id="yesRadio1">Yes &nbsp &nbsp
+                    <input type="radio" name="question1" value="no" id="noRadio1">No
+                    <br><br>
+
+
+
+                    <h4>Question 2: Could national security be under threat if this data is disclosed?</h4>
+                    <p>Information on weapons and ammunitions or strategic military locations or any source of defensive
+                        or offensive force;
+                        Information on the movements of armed forces, or other military forces, or VIPs; Military plans,
+                        weapons or operations in time of
+                        conflict; Information on military stockpile, base locations, etc.</p>
+                    <br>
+                    <input type="radio" name="question2" value="yes" id="yesRadio2">Yes &nbsp &nbsp
+                    <input type="radio" name="question2" value="no" id="noRadio2">No
+                    <br><br>
+
+                    <h4>Question 3: Can day to-day government function be disrupted if this data is disclosed?</h4>
+                    <p>Classified information that compromise government efficiency if released, such as surveillance
+                        data that helps track down
+                        criminal activities; Information related to sensitive administrative appointments and decisions
+                    </p>
+                    <br>
+                    <input type="radio" name="question3" value="yes" id="yesRadio3">Yes &nbsp &nbsp
+                    <input type="radio" name="question3" value="no" id="noRadio3">No
+                    <br><br>
+
+                    <h3> Economic Impact </h3>
+
+                    <h4>Question 4: Are there potential losses to the KSA economy if this data is disclosed?</h4>
+                    <p>Information related to products under manufacturing, which may damage fair competition;
+                        Information on logistics storage
+                        or economic storages; - Documents such as tactical level plans, marketing programs prior to
+                        public release and
+                        technology innovation plans; Sensitive information on national economic policies and strategies,
+                        interest rates,
+                        trade figures, etc. publication of which can decrease investor confidence and hurt overall KSA
+                        economy</p>
+                    <br>
+                    <input type="radio" name="question4" value="yes" id="yesRadio4">Yes &nbsp &nbsp
+                    <input type="radio" name="question4" value="no" id="noRadio4">No
+                    <br><br>
+
+                    <h4>Question 5: Are there potential economic losses to organizations, groups of people or
+                        individuals if
+                        this data is disclosed?</h4>
+                    <p>Trade secrets and intellectual property theft which are critical to revenue of organizations;
+                        Detailed statements of
+                        individual transactions</p>
+                    <br>
+                    <input type="radio" name="question5" value="yes" id="yesRadio5">Yes &nbsp &nbsp
+                    <input type="radio" name="question5" value="no" id="noRadio5">No
+                    <br><br>
+
+                    <h3> Social Impact </h3>
+
+                    <h4>Question 6: Is there potential threat to the health and safety of groups of people/individuals
+                        if
+                        this data is disclosed?</h4>
+                    <p>Classified information on ongoing law enforcement operations that put personnel, witnesses at
+                        risk;
+                        Information identifying minorities, etc.</p>
+                    <br>
+                    <input type="radio" name="question6" value="yes" id="yesRadio6">Yes &nbsp &nbsp
+                    <input type="radio" name="question6" value="no" id="noRadio6">No
+                    <br><br>
+
+                    <h4>Question 7: Is there potential threat to the privacy of groups of people/individuals if this
+                        data is
+                        disclosed?</h4>
+                    <p>Personal information such as medical records, financial records and other identity details</p>
+                    <br>
+                    <input type="radio" name="question7" value="yes" id="yesRadio7">Yes &nbsp &nbsp
+                    <input type="radio" name="question7" value="no" id="noRadio7">No
+                    <br><br>
+
+
+                    <h3> Technological/Infrastructural Impact </h3>
+
+                    <h4>Question 8: Is there potential interruption to critical infrastructure in KSA, such as
+                        transport,
+                        energy, etc.?</h4>
+                    <p>Information on vital installations; Information critical to safety of national infrastructure,
+                        such as security protocols of
+                        powerplants, water stations, etc.</p>
+                    <br>
+                    <input type="radio" name="question8" value="yes" id="yesRadio8">Yes &nbsp &nbsp
+                    <input type="radio" name="question8" value="no" id="noRadio8">No
+                    <br><br>
+
+                    <h4>Question 9: Is there potential threat to the digital infrastructure in KSA, such as access to
+                        government data, cybersecurity threats, etc.?</h4>
+                    <p>Information on the encryption keys and mechanisms used for national infrastructure; Design and
+                        implementation details
+                        of security systems (firewalls, access control, network diagrams, etc.); Information on the
+                        government's network architecture,
+                        access credentials or software vulnerabilities, releasing which could threaten the Kingdom’s
+                        digital infrastructure </p>
+                    <br>
+                    <input type="radio" name="question9" value="yes" id="yesRadio9">Yes &nbsp &nbsp
+                    <input type="radio" name="question9" value="no" id="noRadio9">No
+                    <br><br>
+
+                    <h3> Environmental Impact </h3>
+
+                    <h4>Question 10: Is there potential threat to the environmental and/or natural resources of KSA if
+                        this
+                        data is disclosed?</h4>
+                    <p>Location of a hazardous waste sites, information related to environmentally sensitive areas such
+                        as wildlife
+                        habitats or protected areas</p>
+                    <br>
+                    <input type="radio" name="question10" value="yes" id="yesRadio10">Yes &nbsp &nbsp
+                    <input type="radio" name="question10" value="no" id="noRadio10">No
+                    <br><br>
+
+                </td>
+                <td width="10%"></td>
+                <td width="40%">
+
+                    <h3> Legal Impact </h3>
+
+                    <h4>Question 11: Does publishing this data conflict with Personal Data Protection Law?</h4>
+                    <p>Information published must comply to PDPL, which protects privacy of individuals and regulates
+                        processing of person data in the Kingdom</p>
+                    <br>
+                    <input type="radio" name="question11" value="yes" id="yesRadio11">Yes &nbsp &nbsp
+                    <input type="radio" name="question11" value="no" id="noRadio11">No
+                    <br><br>
+
+                    <h4>Question 12: Does publishing this data conflict with Freedom of Information Policy?</h4>
+                    <p>The information must not be exempted for sharing under the Freedom of Information Policy</p>
+                    <br>
+                    <input type="radio" name="question12" value="yes" id="yesRadio12">Yes &nbsp &nbsp
+                    <input type="radio" name="question12" value="no" id="noRadio12">No
+                    <br><br>
+
+                    <h4>Question 13: Does publishing this data conflict Data Sharing Policy?</h4>
+                    <p>The information must not be exempted for sharing under any of the policies that regulate data
+                        sharing in the kingdom</p>
+                    <br>
+                    <input type="radio" name="question13" value="yes" id="yesRadio13">Yes &nbsp &nbsp
+                    <input type="radio" name="question13" value="no" id="noRadio13">No
+                    <br><br>
+
+                    <h4>Question 14: Does publishing this data conflict with other existing rules and regulations?</h4>
+                    <p>Information must be compliant with any other existing laws, rules and regulations within the
+                        Kingdom</p>
+                    <br>
+                    <input type="radio" name="question14" value="yes" id="yesRadio14">Yes &nbsp &nbsp
+                    <input type="radio" name="question14" value="no" id="noRadio14">No
+                    <br><br>
+
+                    <h4>Question 15: Does publishing this data breach any ongoing contractual agreements between govt &
+                        private or amongst private entities?</h4>
+                    <p>The information published must not violate terms of any Purchase agreements, Public-private
+                        partnerships, licensing agreements, etc.</p>
+                    <input type="radio" name="question15" value="yes" id="yesRadio15">Yes &nbsp &nbsp
+                    <input type="radio" name="question15" value="no" id="noRadio15">No
+                    <br><br>
+
+                    <h4>Question 16: Does this data have any restrictions in terms of redistribution and/or intellectual
+                        property or copyright infringement
+                        issues?</h4>
+                    <p>Patent-protected inventions, organization proprietary information such as R&D data, customer
+                        lists or marketing plans</p>
+                    <br>
+                    <input type="radio" name="question16" value="yes" id="yesRadio16">Yes &nbsp &nbsp
+                    <input type="radio" name="question16" value="no" id="noRadio16">No
+                    <br><br>
+
+
+    </form>
+
+
+    <form id="Level2Questions">
+
+        <h2> Level 2: Data Relevance </h2>
+
+        <h4>Question 1: Is the data collected accurate and collected from credible data source?</h4>
+        <p>Data is published by the appropriate government entity and reflects the true characteristics of the
+            information to be measured or observed</p>
+        <br>
+        <input type="radio" name="question17" value="yes" id="yesRadio17">Yes &nbsp &nbsp
+        <input type="radio" name="question17" value="no" id="noRadio17">No
+        <br><br>
+
+        <h4>Question 2: Is the data collected complete??</h4>
+        <p>All necessary fields or variables are provided within the dataset, with no missing values; Information of all
+            years must be included,
+            including projections if any</p>
+        <br>
+        <input type="radio" name="question18" value="yes" id="yesRadio18">Yes &nbsp &nbsp
+        <input type="radio" name="question18" value="no" id="noRadio18">No
+        <br><br>
+
+        <h4>Question 3: Is the data stored in a usable format?</h4>
+        <p>Data must be available in the right format and structure, have proper documentation and metadata and must be
+            accessible to
+            intended users through available software and tools</p>
+        <br>
+        <input type="radio" name="question19" value="yes" id="yesRadio19">Yes &nbsp &nbsp
+        <input type="radio" name="question19" value="no" id="noRadio19">No
+        <br><br>
+
+        <h4>Question 4: Is the data relevant for the external audience?</h4>
+        <p>Data must be meet specific needs and requirements for users and their intended purpose</p>
+        <br>
+        <input type="radio" name="question20" value="yes" id="yesRadio20">Yes &nbsp &nbsp
+        <input type="radio" name="question20" value="no" id="noRadio20">No
+        <br><br>
+
+    </form>
+
+    <form id="Level3Questions">
+
+        <h2> Level 3: Data Privacy </h2>
+
+        <h4>Question 1: Can personal data in the dataset be anonymized? (Click 'yes' if there is no personal data)</h4>
+        <p>Personal data should be removed or obscured to be compliant with laws through any of the available techniques
+        </p>
+        <br>
+        <input type="radio" name="question21" value="yes" id="yesRadio21">Yes &nbsp &nbsp
+        <input type="radio" name="question21" value="no" id="noRadio21">No
+        <br><br>
+
+        <input type="button" value="Submit" onclick="calculateResults()" style="height:30px;width:100px"> &nbsp &nbsp
+        <input type="button" value="Clear answers" onclick="clearRadioButtons()" style="height:30px;width:100px"> &nbsp
+        &nbsp
+        <br><br>
+        <br><br>
+        <br><br>
+
+        <p><a href="Glossary2.html" style="color: black;">See Glossary</a></p>
+
+
+        </td>
+
+        <td width="5%">
+        </td>
+
+        </tr>
+
+        </table>
+
+    </form>
+</body>
+<script>
+    const yesRadio1 = document.getElementById("yesRadio1");
+    yesRadio1.addEventListener("change", () => {
+        if (yesRadio1.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio1 = document.getElementById("noRadio1");
+    noRadio1.addEventListener("change", () => {
+        if (noRadio1.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio2 = document.getElementById("yesRadio2");
+    yesRadio2.addEventListener("change", () => {
+        if (yesRadio2.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio2 = document.getElementById("noRadio2");
+    noRadio2.addEventListener("change", () => {
+        if (noRadio2.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio3 = document.getElementById("yesRadio3");
+    yesRadio3.addEventListener("change", () => {
+        if (yesRadio3.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio3 = document.getElementById("noRadio3");
+    noRadio3.addEventListener("change", () => {
+        if (noRadio3.checked) {
+            calculateResults();
+        }
+    });
+
+
+    const yesRadio4 = document.getElementById("yesRadio4");
+    yesRadio4.addEventListener("change", () => {
+        if (yesRadio4.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio4 = document.getElementById("noRadio4");
+    noRadio4.addEventListener("change", () => {
+        if (noRadio4.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio5 = document.getElementById("yesRadio5");
+    yesRadio5.addEventListener("change", () => {
+        if (yesRadio5.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio5 = document.getElementById("noRadio5");
+    noRadio5.addEventListener("change", () => {
+        if (noRadio5.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio6 = document.getElementById("yesRadio6");
+    yesRadio6.addEventListener("change", () => {
+        if (yesRadio6.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio6 = document.getElementById("noRadio6");
+    noRadio6.addEventListener("change", () => {
+        if (noRadio6.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio7 = document.getElementById("yesRadio7");
+    yesRadio7.addEventListener("change", () => {
+        if (yesRadio7.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio7 = document.getElementById("noRadio7");
+    noRadio7.addEventListener("change", () => {
+        if (noRadio7.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio8 = document.getElementById("yesRadio8");
+    yesRadio8.addEventListener("change", () => {
+        if (yesRadio8.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio8 = document.getElementById("noRadio8");
+    noRadio8.addEventListener("change", () => {
+        if (noRadio8.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio9 = document.getElementById("yesRadio9");
+    yesRadio9.addEventListener("change", () => {
+        if (yesRadio9.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio9 = document.getElementById("noRadio9");
+    noRadio9.addEventListener("change", () => {
+        if (noRadio9.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio10 = document.getElementById("yesRadio10");
+    yesRadio10.addEventListener("change", () => {
+        if (yesRadio10.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio10 = document.getElementById("noRadio10");
+    noRadio10.addEventListener("change", () => {
+        if (noRadio10.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio11 = document.getElementById("yesRadio11");
+    yesRadio11.addEventListener("change", () => {
+        if (yesRadio11.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio11 = document.getElementById("noRadio11");
+    noRadio11.addEventListener("change", () => {
+        if (noRadio11.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio12 = document.getElementById("yesRadio12");
+    yesRadio12.addEventListener("change", () => {
+        if (yesRadio12.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio12 = document.getElementById("noRadio12");
+    noRadio12.addEventListener("change", () => {
+        if (noRadio12.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio13 = document.getElementById("yesRadio13");
+    yesRadio13.addEventListener("change", () => {
+        if (yesRadio13.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio13 = document.getElementById("noRadio13");
+    noRadio13.addEventListener("change", () => {
+        if (noRadio13.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio14 = document.getElementById("yesRadio14");
+    yesRadio14.addEventListener("change", () => {
+        if (yesRadio14.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio14 = document.getElementById("noRadio14");
+    noRadio14.addEventListener("change", () => {
+        if (noRadio14.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio15 = document.getElementById("yesRadio15");
+    yesRadio15.addEventListener("change", () => {
+        if (yesRadio15.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio15 = document.getElementById("noRadio15");
+    noRadio15.addEventListener("change", () => {
+        if (noRadio15.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio16 = document.getElementById("yesRadio16");
+    yesRadio16.addEventListener("change", () => {
+        if (yesRadio16.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio16 = document.getElementById("noRadio16");
+    noRadio16.addEventListener("change", () => {
+        if (noRadio16.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio17 = document.getElementById("yesRadio17");
+    yesRadio17.addEventListener("change", () => {
+        if (yesRadio17.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio17 = document.getElementById("noRadio17");
+    noRadio17.addEventListener("change", () => {
+        if (noRadio17.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio18 = document.getElementById("yesRadio18");
+    yesRadio18.addEventListener("change", () => {
+        if (yesRadio18.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio18 = document.getElementById("noRadio18");
+    noRadio18.addEventListener("change", () => {
+        if (noRadio18.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio19 = document.getElementById("yesRadio19");
+    yesRadio19.addEventListener("change", () => {
+        if (yesRadio19.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio19 = document.getElementById("noRadio19");
+    noRadio19.addEventListener("change", () => {
+        if (noRadio19.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio20 = document.getElementById("yesRadio20");
+    yesRadio20.addEventListener("change", () => {
+        if (yesRadio20.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio20 = document.getElementById("noRadio20");
+    noRadio20.addEventListener("change", () => {
+        if (noRadio20.checked) {
+            calculateResults();
+        }
+    });
+
+    const yesRadio21 = document.getElementById("yesRadio21");
+    yesRadio21.addEventListener("change", () => {
+        if (yesRadio21.checked) {
+            calculateResults();
+        }
+    });
+    const noRadio21 = document.getElementById("noRadio21");
+    noRadio21.addEventListener("change", () => {
+        if (noRadio21.checked) {
+            calculateResults();
+        }
+    });
+
+
+
+</script>
+
+
+
+
+<script>
+    function calculateResults() {
+        var form1 = document.getElementById("Level1Questions");
+        var yesCount1 = 0;
+        var noCount1 = 0;
+
+        for (var i = 0; i < form1.elements.length; i++) {
+            if (form1.elements[i].type === "radio" && form1.elements[i].checked) {
+                if (form1.elements[i].value === "yes") {
+                    yesCount1++;
+                } else {
+                    noCount1++;
+                }
+            }
+        }
+
+        var form2 = document.getElementById("Level2Questions");
+        var yesCount2 = 0;
+        var noCount2 = 0;
+
+        for (var i = 0; i < form2.elements.length; i++) {
+            if (form2.elements[i].type === "radio" && form2.elements[i].checked) {
+                if (form2.elements[i].value === "yes") {
+                    yesCount2++;
+                } else {
+                    noCount2++;
+                }
+            }
+        }
+
+        var form3 = document.getElementById("Level3Questions");
+        var yesCount3 = 0;
+        var noCount3 = 0;
+
+        for (var i = 0; i < form3.elements.length; i++) {
+            if (form3.elements[i].type === "radio" && form3.elements[i].checked) {
+                if (form3.elements[i].value === "yes") {
+                    yesCount3++;
+                } else {
+                    noCount3++;
+                }
+            }
+        }
+
+
+
+        if (yesCount1 + noCount1 == 16 && yesCount2 + noCount2 == 4 && yesCount3 + noCount3 == 1) {
+            if (yesCount1 == 0 && noCount2 == 0 && noCount3 == 0) {
+                // alert("Open Data - Ready to Publish")
+                const answer = document.getElementById("answer");
+                answer.innerHTML = "Open Data";
+                answer.style.color = "#07d600";
+            }
+        }
+
+        else if (yesCount1 > 0 || noCount2 > 0 || noCount3 > 0) {
+            // alert("Open Data - Ready to Publish")
+            const answer = document.getElementById("answer");
+            answer.innerHTML = "Restricted Data";
+            answer.style.color = "red";
+        }
+        else {
+            // alert("Classified Data")
+            const answer = document.getElementById("answer");
+            answer.innerHTML = "";
+
+        }
+
+
+
+        // alert("Yes: " + yesCount + "\nNo: " + noCount);
+
+    }
+
+    function clearRadioButtons() {
+        var ele = document.querySelectorAll("input[type=radio]");
+        for (var i = 0; i < ele.length; i++) {
+            ele[i].checked = false;
+        }
+    }
+
+</script>
