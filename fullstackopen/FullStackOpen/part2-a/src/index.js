@@ -1,10 +1,12 @@
 import ReactDOM from 'react-dom'
 import App from './App'
+import './index.css'
+
 
 const notes = [
   {
     id: 1,
-    content: 'HTML is easy',
+    content: 'HTML is easy Ali',
     date: '2019-05-30T17:30:31.098Z',
     important: true
   },
