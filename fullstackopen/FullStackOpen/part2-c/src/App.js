@@ -1,17 +1,22 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import Note from './components/Note'
+import Notification from './components/Notification'
+import Footer from './components/Footer'
+import noteService from './services/notes'
 
 const App = () => {
   const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(true)
+  const [errorMessage, setErrorMessage] = useState(null)
 
   useEffect(() => {
-    axios
-      .get('http://localhost:3001/notes')
-      .then(response => {
-        setNotes(response.data)
+    noteService
+      .getAll()
+      .then(initialNotes => {
+        console.log("Initial notes:")
+        console.log(initialNotes)
+        setNotes(initialNotes)
       })
   }, [])
 
@@ -22,10 +27,10 @@ const App = () => {
       important: Math.random() > 0.5,
     }
 
-    axios
-      .post('http://localhost:3001/notes', noteObject)
-      .then(response => {
-        setNotes(notes.concat(response.data))
+    noteService
+      .create(noteObject)
+        .then(returnedNote => {
+        setNotes(notes.concat(returnedNote))
         setNewNote('')
       })
   }
@@ -34,28 +39,51 @@ const App = () => {
     setNewNote(event.target.value)
   }
 
-  //   const toggleImportanceOf = (id) => {
-  //   console.log('importance of ' + id + ' needs to be toggled')
-  // }
-
-  const toggleImportanceOf = id => {
-  const url = `http://localhost:3001/notes/${id}`
-  const note = notes.find(n => n.id === id)
-  const changedNote = { ...note, important: !note.important }
-
-  axios.put(url, changedNote).then(response => {
-    setNotes(notes.map(n => n.id !== id ? n : response.data))
-  })
-}
-
-
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important)
 
+  // const notesToShow = notes.data
+
+   console.log("Data is")
+   const notes2 = notesToShow.data
+   console.log(notes2)
+
+   if (Array.isArray(notes2)) {
+    console.log("data is an array");
+  } else {
+    console.log("data is not an array");
+  }
+  //  console.log(notes2(0))
+  //  console.log(notes2[1])
+  //  console.log(notes2[2])
+
+    // console.log(notesToShow.data)
+
+
+   const toggleImportanceOf = id => {
+      const note = notes.find(n => n.id === id)
+      const changedNote = { ...note, important: !note.important }
+  
+      noteService
+        .update(id, changedNote).then(returnedNote => {
+          setNotes(notes.map(note => note.id !== id ? note : returnedNote))
+        })
+        .catch(error => {
+          setErrorMessage(
+            `Note '${note.content}' was already removed from server`
+          )
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
+          setNotes(notes.filter(n => n.id !== id))
+        })
+    }
+
   return (
     <div>
       <h1>Notes</h1>
+      <Notification message={errorMessage} />
       <div>
         <button onClick={() => setShowAll(!showAll)}>
           show {showAll ? 'important' : 'all' }
@@ -63,8 +91,10 @@ const App = () => {
       </div> 
       <ul>
         <ul>
-          {notesToShow.map(note => 
-            <Note key={note.id} note={note} 
+          {Array.isArray(notesToShow) && notesToShow.map(note => 
+            <Note
+              key={note.id}
+              note={note}
               toggleImportance={() => toggleImportanceOf(note.id)}
             />
           )}
@@ -74,11 +104,11 @@ const App = () => {
         <input value={newNote} onChange={handleNoteChange} />
         <button type="submit">save</button>
       </form>
+      <Footer />
     </div>
   )
 }
 
 export default App
 
-"use strict";
 
