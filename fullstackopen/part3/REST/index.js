@@ -6,6 +6,9 @@ app.use(express.json())
 const cors = require('cors')
 app.use(cors())
 
+app.use(express.static('build'))
+
+
 let notes = [
   {
     id: 1,
@@ -25,7 +28,7 @@ let notes = [
 ]
 
 app.get('/', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+  res.send('<h1>Hello World2!</h1>')
 })
 
 app.get('/api/notes', (req, res) => {
@@ -80,7 +83,7 @@ app.delete('/api/notes/:id', (request, response) => {
   response.status(204).end()
 })
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001 //change for deploying to the web, since env vars are read
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
