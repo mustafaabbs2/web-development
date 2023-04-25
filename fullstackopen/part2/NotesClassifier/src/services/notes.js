@@ -21,3 +21,5 @@ export default {
   create, 
   update 
 }
+
+//This is exporting the functions above
