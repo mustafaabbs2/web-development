@@ -8,7 +8,10 @@ POST http://localhost:3001/api/notes/ HTTP/1.1
 content-type: application/json
 
 {
-    "name": "sample",
+    "name": "a test",
     "time": "Wed, 21 Oct 2015 18:27:50 GMT",
-    "content": "Hehehehehe"
+    "content": "This has a body Mustafa has added to test his post function"
 }
+
+###
+DELETE http://localhost:3001/api/notes/2
