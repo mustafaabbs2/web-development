@@ -14,9 +14,7 @@ const App = () => {
     noteService
       .getAll()
       .then(initialNotes => {
-        console.log("Initial notes:")
-        console.log(initialNotes)
-        setNotes(initialNotes)
+        setNotes(initialNotes.data)
       })
   }, [])
 
@@ -42,24 +40,6 @@ const App = () => {
   const notesToShow = showAll
     ? notes
     : notes.filter(note => note.important)
-
-  // const notesToShow = notes.data
-
-   console.log("Data is")
-   const notes2 = notesToShow.data
-   console.log(notes2)
-
-   if (Array.isArray(notes2)) {
-    console.log("data is an array");
-  } else {
-    console.log("data is not an array");
-  }
-  //  console.log(notes2(0))
-  //  console.log(notes2[1])
-  //  console.log(notes2[2])
-
-    // console.log(notesToShow.data)
-
 
    const toggleImportanceOf = id => {
       const note = notes.find(n => n.id === id)
@@ -91,7 +71,7 @@ const App = () => {
       </div> 
       <ul>
         <ul>
-          {Array.isArray(notesToShow) && notesToShow.map(note => 
+          {notesToShow.map(note => 
             <Note
               key={note.id}
               note={note}
@@ -110,5 +90,4 @@ const App = () => {
 }
 
 export default App
-
 
