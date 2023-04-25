@@ -14,7 +14,7 @@ const App = () => {
     noteService
       .getAll()
       .then(initialNotes => {
-        setNotes(initialNotes.data)
+        setNotes(initialNotes)
       })
   }, [])
 
@@ -90,4 +90,3 @@ const App = () => {
 }
 
 export default App
-
