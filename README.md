@@ -15,13 +15,9 @@ Make sure you have Node.js and npm installed on your machine.
 1. Clone the repository
    ```sh
    git clone https://github.com/mustafabbs2/web-development.git
-2. Navigate to the folder
-   ```cpp
-   int x = 1; 
+2. Navigate to the sub-project folder:
 
 | Subproject | Description |
 |------------|-------------|
-| [Subproject 1](./subproject1/README.md) | Description of Subproject 1 |
-| [Subproject 2](./subproject2/README.md) | Description of Subproject 2 |
-| [Subproject 3](./subproject3/README.md) | Description of Subproject 3 |
-| ...        | ...         |
+| [FullStackOpen](./FullStackOpen/README.md) | Project files of course material and exercises from FullStackOpen |
+| [NoteTaker](./NoteTaker/README.md) | A note taker and classifier written in React |
