@@ -1,8 +1,8 @@
 import axios from 'axios'
 
-const baseUrl = '/api/notes' //if you're copying over to the backend.. 
+// const baseUrl = '/api/notes' //if you're copying over to the backend.. 
 // Check REST - for the backend server
-// const baseUrl = 'http://localhost:3001/api/notes' //-> if youre developing locally
+const baseUrl = 'http://localhost:3001/api/notes' //-> if youre developing locally
 
 const getAll = () => {
   const request = axios.get(baseUrl)
