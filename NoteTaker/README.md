@@ -29,3 +29,50 @@ Within `src\`, you find:
 - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
+## Examples
+
+This is an example of how the `server\` looks. It just serves up a list which can be accessed via REST API calls. Look at `index.js`.
+
+```js
+let notes = [
+  {
+    id: 1,
+    content: "HTML is easy",
+    important: true
+  },
+  {
+    id: 2,
+    content: "Browser can execute only JavaScript",
+    important: false
+  },
+  {
+    id: 3,
+    content: "GET and POST are the most important methods of HTTP protocol",
+    important: true
+  }
+]
+```
+
+You can use the `test.http` file in the server folder to test out your REST API calls. 
+
+```http
+GET http://localhost:3001/api/notes/
+
+###
+GET http://localhost:3001/
+
+###
+POST http://localhost:3001/api/notes/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "a test",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "content": "This has a body Mustafa has added to test his post function"
+}
+```
+
+
+Note!
+
+Set proxy to `proxy": "http://localhost:3001"` in `package.json` if you intend to serve the notes from the client.
