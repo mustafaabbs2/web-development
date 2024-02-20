@@ -67,6 +67,9 @@ const App = () => {
         setNotes(notes.map(note => note.id !== id ? note : returnedNote))
       })
       .catch(error => {
+        console.error('Error caught:', error);
+        console.error('Note:', note);
+
         // Set an error message if the note was already removed from the server
         setErrorMessage(
           `Note '${note.content}' was already removed from server`
@@ -83,7 +86,7 @@ const App = () => {
   // Return the JSX representing the App component
   return (
     <div>
-      <h1>Notes</h1>
+      <h1>A Note App from Mustafa Bhotvawala</h1>
       <Notification message={errorMessage} />
       <div>
         {/* Button to toggle between showing all and important notes */}
