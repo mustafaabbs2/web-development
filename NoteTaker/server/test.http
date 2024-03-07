@@ -31,3 +31,17 @@ content-type: application/json
 
 ###
 DELETE http://localhost:3001/api/notes/7
+
+
+###
+GET http://localhost:3001/api/notes/10
+
+###
+PUT http://localhost:3001/api/notes/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "a test",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "content": "This SDSas a body Mustafa has added to test his post function"
+}
